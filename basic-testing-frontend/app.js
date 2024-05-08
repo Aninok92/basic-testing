@@ -1,6 +1,6 @@
 import { getUserInput } from './userInput.js';
 import { getResultText } from "./resultText.js";
-import { getResult } from './result.js';
+import { calculateResult } from './src/math.js';
 
 const form = document.querySelector('form');
 const output = document.getElementById('result');
@@ -10,7 +10,7 @@ function formSubmitHandler(event) {
   
   const numberInputs = getUserInput(form)
 
-  const result = getResult(numberInputs)
+  const result = calculateResult(numberInputs)
 
   output.textContent = getResultText(result);
 }
