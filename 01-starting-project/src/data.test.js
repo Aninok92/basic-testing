@@ -11,7 +11,3 @@ describe('generateReportData', () => {
         expect(logger).toBeCalled()
     })
 })
-
-// describe('', () => {
-    
-// })
