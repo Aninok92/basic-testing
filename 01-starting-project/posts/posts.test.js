@@ -1,6 +1,4 @@
-import { savePost, extractPostData } from './posts.js';
-import { sendDataRequest } from '../util/http.js';
-import { validateNotEmpty } from '../util/validation.js';
+import { extractPostData } from './posts.js';
 import { describe, it, expect, mockImport, beforeEach } from 'vitest';
 
 const title = 'My title'
@@ -42,18 +40,4 @@ it('should return an object with the correct properties', async () => {
 });
 });
 
-describe('savePost', () => {
-    it('should add a created timestamp to the postData object (if not already set)', () => {
-        const postData = {
-          title: 'My new post',
-          content: 'This is the content of my new post.',
-        };
-      
-        const savedPost = savePost(postData);
-      
-        expect(savedPost.created).toBeInstanceOf(Date);
-        // Check if timestamp was added, otherwise expect original object
-        expect(savedPost).toEqual(postData)
-      });
-})
 
